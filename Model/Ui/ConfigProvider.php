@@ -65,10 +65,17 @@ class ConfigProvider implements ConfigProviderInterface {
      * @return array
      */
     public function getConfig() {
+
+        $isActive = $this->config->isActive();
+
+        if (!$isActive) {
+            return [];
+        }
+
         return [
             'payment' => [
                 self::CODE => [
-                    'isActive'                  => $this->config->isActive(),
+                    'isActive'                  => $isActive,
                     'debug_mode'                => $this->config->isDebugMode(),
                     'public_key'                => $this->config->getPublicKey(),
                     'hosted_url'                => $this->config->getHostedUrl(),
@@ -123,7 +130,7 @@ class ConfigProvider implements ConfigProviderInterface {
         // Return the quote amount
         return $this->checkoutSession->getQuote()->getGrandTotal()*100;
     }
-   
+
     /**
      * Get a quote currency code.
      *
