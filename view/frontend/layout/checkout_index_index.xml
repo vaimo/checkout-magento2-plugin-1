@@ -4,6 +4,15 @@
         <css src="CheckoutCom_Magento2::css/main.css" />
     </head>
     <body>
+        <!-- PATCH move from default.xml -->
+        <referenceContainer name="before.body.end">
+            <block
+                    template="embedded.phtml"
+                    class="CheckoutCom\Magento2\Block\Embedded"
+                    name="checkout_com_magento2.embedded"
+            />
+        </referenceContainer>
+        <!-- //PATCH -->
         <referenceBlock name="checkout.root">
             <arguments>
                 <argument name="jsLayout" xsi:type="array">

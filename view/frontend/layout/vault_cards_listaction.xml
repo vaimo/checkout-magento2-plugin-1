@@ -6,9 +6,18 @@
         <css src="CheckoutCom_Magento2::css/cards-list.css" />
     </head>
     <body>
+        <!-- PATCH move from default.xml -->
+        <referenceContainer name="before.body.end">
+            <block
+                template="embedded.phtml"
+                class="CheckoutCom\Magento2\Block\Embedded"
+                name="checkout_com_magento2.embedded"
+            />
+        </referenceContainer>
+        <!-- //PATCH -->
         <referenceContainer name="content">
-            <block 
-                template="add-new-card-form.phtml" 
+            <block
+                template="add-new-card-form.phtml"
                 class="CheckoutCom\Magento2\Block\Cards\Form"
                 name="checkout_com_magento2.add_new_card_form"
             />

@@ -1,6 +1,6 @@
 {
     "name": "checkoutcom/magento2",
-    "description": "Checkout.com Payment Gateway for Magento 2",
+    "description": "Checkout.com Payment Gateway for Magento 2 (with additional Vaimo fixes)",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0",
         "magento/framework": ">=100.1.0",
@@ -9,6 +9,9 @@
         "magento/module-checkout": "*",
         "magento/module-payment": "*",
         "magento/module-vault": "*"
+    },
+    "support": {
+        "source": "https://github.com/vaimo/checkoutcom-magento2-plugin"
     },
     "type": "magento2-module",
     "version": "1.0.28",
